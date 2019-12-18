@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+body{
+    background-color: #f3f2f2;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 17px;
+    color: #444;
+}
+.container{
+    padding: 5%
+}
+@media (min-width : 900px){
+    .container{
+        padding: 5% 20%
+    }
+}
+.table{
+    background-color: #cecccc;
+    border: 1px solid rgb(19, 139, 103);
+    padding: 10px
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+    perspective: 1000px
+}
+.row .cell{
+    flex: 0 0 120px;
+    max-width: 120px;
+    height: 120px;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease-in-out all;
+}
+.row .cell.hovered{
+    transform: rotateY(360deg)
+}
+.row .cell .front, .row .cell .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.row .cell .front{
+    background-color: seagreen;
+    z-index: 1;
+}
+.row .cell .back{
+    background-color: rgb(114, 15, 15);
+    font-size: 45px;
+    line-height: 115px;
+    color: #fff;
+    z-index: 0;
+}
+.btn{
+    background-color: seagreen;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 25px;
+    border: 2px solid rgb(31, 107, 64);
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.closed{
+    visibility: hidden !important;
+}
+
+
+@media(max-width: 600px){
+    .row .cell{
+        flex: 0 0 80px;
+        max-width: 80px;
+        height: 80px
+    }
+}
